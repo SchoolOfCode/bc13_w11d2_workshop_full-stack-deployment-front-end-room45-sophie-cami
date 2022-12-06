@@ -20,9 +20,16 @@ function InputList({ addToList, buttonText }) {
     setInput("");
   }
 
+  function handleKeyDown(event) {
+    if (event.key === 'Enter') {
+    addToList(input);
+    setInput("")
+    }
+  }
+
   return (
     <section>
-      <input value={input} onChange={handleInput} />
+      <input value={input} onChange={handleInput} onKeyPress={handleKeyDown} />
       <button className="InputList" onClick={handleClick}>
         {buttonText}
       </button>

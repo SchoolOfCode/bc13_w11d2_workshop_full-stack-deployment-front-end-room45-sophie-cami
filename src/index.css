@@ -9,12 +9,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   display: flex;
   justify-content: center;
-  background-color: rgb(251, 206, 63);
-  background: radial-gradient(
-    circle,
-    rgba(251, 206, 63, 0.5284488795518207) 0%,
-    rgba(252, 248, 70, 1) 100%
-  );
+  background-color: rgb(103, 90, 170)
 }
 
 code {
@@ -24,7 +19,7 @@ code {
 
 section {
   font-size: 40px;
-  font-family: "Dancing Script";
+  font-family: "Segoe UI";
   display: flex;
   flex-direction: column;
   justify-content: center;
