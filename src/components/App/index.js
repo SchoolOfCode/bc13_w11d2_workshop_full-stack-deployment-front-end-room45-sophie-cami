@@ -60,9 +60,9 @@ function App() {
       console.log(data);
     }
 
-    clearList();
     //This function clears all the items that have been added to the list.
     const clearedList = [];
+    clearList();
     setList(clearedList);
   }
 
