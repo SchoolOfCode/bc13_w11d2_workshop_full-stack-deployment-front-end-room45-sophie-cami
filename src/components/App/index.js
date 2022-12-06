@@ -64,7 +64,7 @@ function App() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ completed: true }),
+        //body: JSON.stringify({ completed: true }),
       });
 
       const data = await response.json();
