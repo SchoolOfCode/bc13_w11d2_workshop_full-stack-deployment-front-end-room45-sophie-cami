@@ -56,20 +56,16 @@ function App() {
   }
 
   function tickItem(idOfTickedItem) {
-    const item = list.filter((listItem) => listItem.id === idOfTickedItem);
+    async function completeTask() {
+      const item = list.filter((listItem) => listItem.id === idOfTickedItem);
 
-    let completed = {
-      completed: !item[0].completed,
-    };
-
-    async function completeTask(list) {
       const response = await fetch(`${url}/items/${idOfTickedItem}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
           "Access-Control-Allow-Origin": "no-cors",
         },
-        body: JSON.stringify({ listItem: completed }),
+        body: JSON.stringify({ completed: !item[0].completed }),
       });
 
       const data = await response.json();
@@ -77,7 +73,7 @@ function App() {
       console.log("This is our data", data);
     }
 
-    completeTask(list);
+    completeTask();
 
     console.log(item);
 
