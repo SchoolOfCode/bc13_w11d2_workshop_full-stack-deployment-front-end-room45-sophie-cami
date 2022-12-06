@@ -57,14 +57,14 @@ function App() {
 
   function tickItem(idOfTickedItem) {
     async function completeTask() {
-      //const item = list.filter((listItem) => listItem.id === idOfTickedItem);
+      const item = list.filter((listItem) => listItem.id === idOfTickedItem);
 
       const response = await fetch(`${url}/items/${idOfTickedItem}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
         },
-        //body: JSON.stringify({ completed: true }),
+        body: JSON.stringify({ completed: !item[0].completed }),
       });
 
       const data = await response.json();
