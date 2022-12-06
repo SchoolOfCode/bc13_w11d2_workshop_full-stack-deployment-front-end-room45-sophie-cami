@@ -13,6 +13,7 @@ const url =
 
 function App() {
   const [list, setList] = useState([]);
+  const [ticked, setTicked] = useState(false);
 
   // Fetching shopping list data from shopping list API.
   useEffect(() => {
@@ -23,7 +24,7 @@ function App() {
       setList(data.payload);
     }
     getShoppingList();
-  }, [list]);
+  }, [ticked]);
 
   async function addToList(newListItem) {
     //This function changes the state of the list by pushing the text from the input field in to the array.
@@ -82,6 +83,8 @@ function App() {
           : { ...item, completed: !item.completed };
       });
     });
+
+    setTicked(!ticked);
   }
 
   return (
