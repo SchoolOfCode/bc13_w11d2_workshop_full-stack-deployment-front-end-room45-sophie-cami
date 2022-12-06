@@ -56,7 +56,7 @@ function App() {
   }
 
   function tickItem(idOfTickedItem) {
-    async function completeTask() {
+    async function completeTask(list) {
       const item = list.filter((listItem) => listItem.id === idOfTickedItem);
       const response = await fetch(`${url}/items/${idOfTickedItem}`, {
         method: "PATCH",
@@ -69,7 +69,7 @@ function App() {
       console.log("This is our data", data);
     }
 
-    completeTask();
+    completeTask(list);
 
     setList((previous) => {
       return previous.map((item) => {
