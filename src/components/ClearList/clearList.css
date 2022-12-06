@@ -40,8 +40,8 @@
 .ClearList {
 	@extend .center-content;
 	padding: 10px 30px;
-	width: 40vw;
-	max-width: 100px;
+	min-width: 40vw;
+	max-width: 250px;
   font-size: 24px;
   cursor: pointer;
   
