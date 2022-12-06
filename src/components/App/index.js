@@ -13,7 +13,6 @@ const url =
 
 function App() {
   const [list, setList] = useState([]);
-  const [ticked, setTicked] = useState(false);
 
   // Fetching shopping list data from shopping list API.
   useEffect(() => {
@@ -24,7 +23,7 @@ function App() {
       setList(data.payload);
     }
     getShoppingList();
-  }, [ticked]);
+  }, []);
 
   async function addToList(newListItem) {
     //This function changes the state of the list by pushing the text from the input field in to the array.
@@ -66,7 +65,7 @@ function App() {
           "Content-Type": "application/json",
           "Access-Control-Allow-Origin": "no-cors",
         },
-        body: JSON.stringify({ completed: !item[0].completed }),
+        body: JSON.stringify({ completed: true }),
       });
 
       const data = await response.json();
@@ -83,8 +82,6 @@ function App() {
           : { ...item, completed: !item.completed };
       });
     });
-
-    setTicked(!ticked);
   }
 
   return (
