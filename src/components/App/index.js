@@ -63,7 +63,6 @@ function App() {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "no-cors",
         },
         body: JSON.stringify({ completed: true }),
       });
