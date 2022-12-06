@@ -1,9 +1,9 @@
 :root {
-	--background-color: #ffe5e5;
+	--background-color: #e5fcff;
 	--color: #000000;
 	--feedback-bg-color: #ffffff;
-	--feedback-secondary-color: #ffacac;
-	--feedback-primary-color: #53488d;
+	--feedback-secondary-color: #acfffe;
+	--feedback-primary-color: #477a79;
 	--feedback-icon-color: #ffffff;
 	--feedback-form-input: #f4f4f4;
 }
@@ -37,6 +37,8 @@
 .InputList {
 	@extend .center-content;
 	padding: 10px 30px;
+	width: 40vw;
+	max-width: 100px
   font-size: 24px;
   cursor: pointer;
   
