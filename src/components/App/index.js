@@ -23,7 +23,7 @@ function App() {
       setList(data.payload);
     }
     getShoppingList();
-  }, []);
+  }, [list]);
 
   async function addToList(newListItem) {
     //This function changes the state of the list by pushing the text from the input field in to the array.
