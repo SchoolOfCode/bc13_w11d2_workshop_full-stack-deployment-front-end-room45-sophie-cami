@@ -55,7 +55,7 @@ function App() {
     setList(clearedList);
   }
 
-  function tickItem(idOfTickedItem) {
+  async function tickItem(idOfTickedItem) {
     async function completeTask() {
       const item = list.filter((listItem) => listItem.id === idOfTickedItem);
       const response = await fetch(`${url}/items/${idOfTickedItem}`, {
@@ -68,6 +68,8 @@ function App() {
 
       console.log("This is our data", data);
     }
+
+    await completeTask();
 
     setList((previous) => {
       return previous.map((item) => {
