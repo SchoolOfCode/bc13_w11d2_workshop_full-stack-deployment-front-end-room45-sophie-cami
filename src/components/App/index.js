@@ -8,7 +8,8 @@ and clear all of the items in a list.
 2. In order for the components to interact with one another, some functionality will need to be hoisted into the App component
  */
 
-const url = process.env.REACT_APP_BACKEND_URL ?? "https://shopperoo.onrender.com";
+const url =
+  process.env.REACT_APP_BACKEND_URL ?? "https://shopperoo.onrender.com";
 
 function App() {
   const [list, setList] = useState([]);
@@ -54,7 +55,18 @@ function App() {
     setList(clearedList);
   }
 
-  function tickItem(idOfTickedItem) {
+  async function tickItem(idOfTickedItem) {
+    const item = list.filter((listItem) => listItem.id === idOfTickedItem);
+    const response = await fetch(`${url}/items/${idOfTickedItem}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ completed: !item[0].completed }),
+    });
+
+    const data = await response.json();
+
+    console.log(data);
+
     setList((previous) => {
       return previous.map((item) => {
         return item.id !== idOfTickedItem
