@@ -6,7 +6,7 @@ import "./clearList.css";
 function ClearList({ clearList, buttonText }) {
   return (
     <section>
-      <button className="ClearList" onClick={clearList}>
+      <button className="ClearList" onClick={() => clearList}>
         {buttonText}
       </button>
     </section>
