@@ -38,7 +38,7 @@
 	@extend .center-content;
 	padding: 10px 30px;
 	width: 40vw;
-	max-width: 100px
+	max-width: 100px;
   font-size: 24px;
   cursor: pointer;
   
