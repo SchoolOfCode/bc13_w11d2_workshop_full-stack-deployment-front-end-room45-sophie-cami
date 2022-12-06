@@ -72,6 +72,7 @@ function App() {
     // completeTask(list);
 
     const item = list.filter((listItem) => listItem.id === idOfTickedItem);
+    console.log(item);
 
     setList((previous) => {
       return previous.map((item) => {
