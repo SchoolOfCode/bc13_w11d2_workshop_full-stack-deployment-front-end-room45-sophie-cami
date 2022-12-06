@@ -57,7 +57,7 @@ function App() {
 
   function tickItem(idOfTickedItem) {
     async function completeTask() {
-      const item = list.filter((listItem) => listItem.id === idOfTickedItem);
+      //const item = list.filter((listItem) => listItem.id === idOfTickedItem);
 
       const response = await fetch(`${url}/items/${idOfTickedItem}`, {
         method: "PATCH",
