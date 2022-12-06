@@ -1,3 +1,13 @@
+:root {
+	--background-color: #ffe5e5;
+	--color: #000000;
+	--feedback-bg-color: #ffffff;
+	--feedback-secondary-color: #ffacac;
+	--feedback-primary-color: #53488d;
+	--feedback-icon-color: #ffffff;
+	--feedback-form-input: #f4f4f4;
+}
+
 /*
 .InputList {
   box-shadow: inset 1px 1px 0px 0px #3dc21b;
