@@ -75,8 +75,6 @@ function App() {
 
     completeTask();
 
-    console.log(item);
-
     setList((previous) => {
       return previous.map((item) => {
         return item.id !== idOfTickedItem
