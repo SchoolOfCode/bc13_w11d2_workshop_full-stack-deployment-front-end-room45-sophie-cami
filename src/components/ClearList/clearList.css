@@ -38,6 +38,7 @@
 
 
 .ClearList {
+  align-content: center;
 	@extend .center-content;
 	padding: 10px 30px;
 	min-width: 40vw;
