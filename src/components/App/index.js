@@ -56,22 +56,29 @@ function App() {
   }
 
   function tickItem(idOfTickedItem) {
-    // async function completeTask(list) {
-
-    //   const response = await fetch(`${url}/items/${idOfTickedItem}`, {
-    //     method: "PATCH",
-    //     headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "no-cors" },
-    //     body: JSON.stringify({ completed: !item[0].completed }),
-    //   });
-
-    //   const data = await response.json();
-
-    //   console.log("This is our data", data);
-    // }
-
-    // completeTask(list);
-
     const item = list.filter((listItem) => listItem.id === idOfTickedItem);
+
+    let completed = {
+      completed: !item[0].completed,
+    };
+
+    async function completeTask(list) {
+      const response = await fetch(`${url}/items/${idOfTickedItem}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "no-cors",
+        },
+        body: JSON.stringify({ listItem: completed }),
+      });
+
+      const data = await response.json();
+
+      console.log("This is our data", data);
+    }
+
+    completeTask(list);
+
     console.log(item);
 
     setList((previous) => {
