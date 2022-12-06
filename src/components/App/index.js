@@ -56,20 +56,22 @@ function App() {
   }
 
   function tickItem(idOfTickedItem) {
-    async function completeTask(list) {
-      const item = list.filter((listItem) => listItem.id === idOfTickedItem);
-      const response = await fetch(`${url}/items/${idOfTickedItem}`, {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "no-cors" },
-        body: JSON.stringify({ completed: !item[0].completed }),
-      });
+    // async function completeTask(list) {
 
-      const data = await response.json();
+    //   const response = await fetch(`${url}/items/${idOfTickedItem}`, {
+    //     method: "PATCH",
+    //     headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "no-cors" },
+    //     body: JSON.stringify({ completed: !item[0].completed }),
+    //   });
 
-      console.log("This is our data", data);
-    }
+    //   const data = await response.json();
 
-    completeTask(list);
+    //   console.log("This is our data", data);
+    // }
+
+    // completeTask(list);
+
+    const item = list.filter((listItem) => listItem.id === idOfTickedItem);
 
     setList((previous) => {
       return previous.map((item) => {
