@@ -60,7 +60,7 @@ function App() {
       const item = list.filter((listItem) => listItem.id === idOfTickedItem);
       const response = await fetch(`${url}/items/${idOfTickedItem}`, {
         method: "PATCH",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "no-cors" },
         body: JSON.stringify({ completed: !item[0].completed }),
       });
 
