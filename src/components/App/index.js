@@ -55,17 +55,20 @@ function App() {
     setList(clearedList);
   }
 
-  async function tickItem(idOfTickedItem) {
-    const item = list.filter((listItem) => listItem.id === idOfTickedItem);
-    const response = await fetch(`${url}/items/${idOfTickedItem}`, {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ completed: !item[0].completed }),
-    });
+  function tickItem(idOfTickedItem) {
+    async function completeTask() {
+      const item = list.filter((listItem) => listItem.id === idOfTickedItem);
+      const response = await fetch(`${url}/items/${idOfTickedItem}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ completed: !item[0].completed }),
+      });
 
-    const data = await response.json();
+      const data = await response.json();
 
-    console.log(data);
+      console.log(data);
+    }
+    completeTask();
 
     setList((previous) => {
       return previous.map((item) => {
